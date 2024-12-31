@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title" required><br>
+    <input type="text" name="category" placeholder="Category" required><br>
+    <textarea name="abstract" placeholder="Abstract" required></textarea><br>
+    <input type="text" name="articleTags" placeholder="Tags" required><br>
+    <input type="text" name="authors" placeholder="Authors" required><br>
+    <input type="text" name="language" placeholder="Language" required><br>
+    <input type="text" name="text" required><br>
+    <input type="text" name="image" multiple><br>
+    <input type="text" name="video"><br>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

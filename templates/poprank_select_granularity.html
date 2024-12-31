@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Select Granularity</h1>
+    <form method="POST" action="{{ url_for('poprank_page') }}">
+        <label for="granularity">Choose Granularity:</label>
+        <select name="granularity" id="granularity">
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <button type="submit">Show Articles</button>
+    </form>
+    {% endblock %}

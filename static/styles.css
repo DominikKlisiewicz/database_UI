@@ -1,0 +1,238 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body and Background */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #007bff;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Articles Grid */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Article Card */
+.article-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Article Image */
+.article-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Article Content */
+.article-content {
+    padding: 20px;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.article-abstract {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.article-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        font-size: 1rem;
+    }
+
+    .article-card {
+        margin: 0 10px;
+    }
+}
+
+/* Center the table on the page */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the table */
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Table Header */
+.table th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Table Body */
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Row Hover Effect */
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styling */
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-warning:hover, .btn-danger:hover {
+    opacity: 0.8;
+}
+
+
+.article-thumbnail {
+    width: 150px;    /* Set the width of the thumbnails */
+    height: 150px;   /* Set the height of the thumbnails */
+    object-fit: cover; /* Ensures images maintain aspect ratio but cover the given dimensions */
+    border-radius: 8px; /* Optional: gives rounded corners */
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid layout for cards */
+    gap: 20px;  /* Space between the cards */
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-body {
+    text-align: center;
+}
+

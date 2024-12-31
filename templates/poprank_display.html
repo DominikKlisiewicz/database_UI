@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>PopRank Results ({{ granularity }})</h1>
+    
+    {% for record in all_articles %}
+        <h2>
+            <!-- Link to the ranking page for the specific timestamp -->
+            <a href="{{ url_for('poprank_ranking', granularity=granularity, timestamp=record.timestamp_ms) }}">
+                Timestamp: {{ record.timestamp }}
+            </a>
+        </h2>
+
+        <ul>
+            {% for article in record.articles %}
+                <li>
+                    <!-- Link to the article page using the article's aid -->
+                    <a href="{{ url_for('article_detail', article_id=article.aid) }}">
+                        <strong>{{ article.title }}</strong>
+                    </a>
+                    <br>
+                    <p>{{ article.abstract }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{% endblock %}

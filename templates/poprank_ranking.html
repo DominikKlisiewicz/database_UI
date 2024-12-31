@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>PopRank Ranking for {{ timestamp }} ({{ granularity }})</h1>
+
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{{ url_for('articles_page') }}?search={{ article.title|replace(' ', '+') }}">
+                    <strong>{{ article.title }}</strong>
+                </a>
+                <br>
+                <p>{{ article.abstract }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('poprank_page') }}">Back to PopRank Overview</a>
+    {% endblock %}

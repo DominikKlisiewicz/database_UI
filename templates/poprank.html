@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="poprank">
+        <h1>Popular Articles Rankings</h1>
+
+        <!-- Step 1: Select Granularity -->
+        <form action="{{ url_for('poprank_page') }}" method="get">
+            <label for="granularity">Select Granularity:</label>
+            <select name="granularity" id="granularity">
+                <option value="daily" {% if granularity == 'daily' %}selected{% endif %}>Daily</option>
+                <option value="weekly" {% if granularity == 'weekly' %}selected{% endif %}>Weekly</option>
+                <option value="monthly" {% if granularity == 'monthly' %}selected{% endif %}>Monthly</option>
+            </select>
+
+            <!-- Step 2: Select Date based on Granularity -->
+            <label for="date">Select Date:</label>
+            <select name="date" id="date">
+                {% for date in available_dates %}
+                    <option value="{{ date }}" {% if date == selected_date %}selected{% endif %}>
+                        {{ date | date("YYYY-MM-DD") }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Show Rankings</button>
+        </form>
+
+        <!-- Display rankings -->
+        {% if poprank_data %}
+            <h2>Top Articles for {{ granularity.capitalize() }} on {{ selected_date | date("YYYY-MM-DD") }}</h2>
+            <ul>
+                {% for rank in poprank_data %}
+                    <li>
+                        <strong>Rank {{ loop.index }}:</strong> 
+                        <a href="{{ url_for('article_detail', article_id=rank['articleAidList'][0]) }}">
+                            Article {{ rank['articleAidList'][0] }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No rankings available for the selected date.</p>
+        {% endif %}
+    </section>
+{% endblock %}
